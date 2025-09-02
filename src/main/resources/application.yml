@@ -1,6 +1,13 @@
 spring:
   application:
     name: xu-ai-code-mother-backend
+  # redis
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      password:
+      ttl: 3600
   # mysql
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
