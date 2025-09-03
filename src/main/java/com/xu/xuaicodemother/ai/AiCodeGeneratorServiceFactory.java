@@ -2,7 +2,8 @@ package com.xu.xuaicodemother.ai;
 
 import com.github.benmanes.caffeine.cache.Cache;
 import com.github.benmanes.caffeine.cache.Caffeine;
-import com.xu.xuaicodemother.ai.tools.*;
+import com.xu.xuaicodemother.ai.guardrail.PromptSafetyInputGuardrail;
+import com.xu.xuaicodemother.ai.tools.ToolManager;
 import com.xu.xuaicodemother.exception.BusinessException;
 import com.xu.xuaicodemother.exception.ErrorCode;
 import com.xu.xuaicodemother.model.enums.CodeGenTypeEnum;
@@ -112,6 +113,7 @@ public class AiCodeGeneratorServiceFactory {
                         .hallucinatedToolNameStrategy(toolExecutionRequest -> ToolExecutionResultMessage.from(
                                 toolExecutionRequest, "Error: there is no tool called " + toolExecutionRequest.name()
                         ))
+                        .inputGuardrails(new PromptSafetyInputGuardrail())  // 添加输入护轨
                         .build();
             }
             case HTML, MULTI_FILE -> {
@@ -121,6 +123,7 @@ public class AiCodeGeneratorServiceFactory {
                         .chatModel(chatModel)
                         .streamingChatModel(openAiStreamingChatModel)
                         .chatMemory(chatMemory)
+                        .inputGuardrails(new PromptSafetyInputGuardrail())  // 添加输入护轨
                         .build();
             }
             default -> throw new BusinessException(ErrorCode.SYSTEM_ERROR,
