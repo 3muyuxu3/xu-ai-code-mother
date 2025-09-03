@@ -3,6 +3,7 @@ package com.xu.xuaicodemother.ai;
 import com.github.benmanes.caffeine.cache.Cache;
 import com.github.benmanes.caffeine.cache.Caffeine;
 import com.xu.xuaicodemother.ai.guardrail.PromptSafetyInputGuardrail;
+import com.xu.xuaicodemother.ai.guardrail.RetryOutputGuardrail;
 import com.xu.xuaicodemother.ai.tools.ToolManager;
 import com.xu.xuaicodemother.exception.BusinessException;
 import com.xu.xuaicodemother.exception.ErrorCode;
@@ -113,7 +114,9 @@ public class AiCodeGeneratorServiceFactory {
                         .hallucinatedToolNameStrategy(toolExecutionRequest -> ToolExecutionResultMessage.from(
                                 toolExecutionRequest, "Error: there is no tool called " + toolExecutionRequest.name()
                         ))
+                        .maxSequentialToolsInvocations(20)  // 最多连续调用 20 次工具
                         .inputGuardrails(new PromptSafetyInputGuardrail())  // 添加输入护轨
+                        //.outputGuardrails(new RetryOutputGuardrail()) // 为了流式响应，这里不添加输出护轨
                         .build();
             }
             case HTML, MULTI_FILE -> {
@@ -124,6 +127,7 @@ public class AiCodeGeneratorServiceFactory {
                         .streamingChatModel(openAiStreamingChatModel)
                         .chatMemory(chatMemory)
                         .inputGuardrails(new PromptSafetyInputGuardrail())  // 添加输入护轨
+                        //.outputGuardrails(new RetryOutputGuardrail()) // 为了流式响应，这里不添加输出护轨
                         .build();
             }
             default -> throw new BusinessException(ErrorCode.SYSTEM_ERROR,
