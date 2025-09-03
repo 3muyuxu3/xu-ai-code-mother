@@ -1,9 +1,11 @@
 package com.xu.xuaicodemother.langgraph4j.ai;
 
+import com.xu.xuaicodemother.ai.AiCodeGenTypeRoutingService;
 import com.xu.xuaicodemother.langgraph4j.tools.ImageSearchTool;
 import com.xu.xuaicodemother.langgraph4j.tools.LogoGeneratorTool;
 import com.xu.xuaicodemother.langgraph4j.tools.MermaidDiagramTool;
 import com.xu.xuaicodemother.langgraph4j.tools.UndrawIllustrationTool;
+import com.xu.xuaicodemother.utils.SpringContextUtil;
 import dev.langchain4j.model.chat.ChatModel;
 import dev.langchain4j.service.AiServices;
 import jakarta.annotation.Resource;
@@ -20,7 +22,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class ImageCollectionServiceFactory {
 
-    @Resource
+    @Resource(name = "openAiChatModel")
     private ChatModel chatModel;
 
     @Resource
