@@ -1,12 +1,16 @@
 package com.xu.xuaicodemother.config;
 
+import com.xu.xuaicodemother.monitor.AiModelMonitorListener;
 import dev.langchain4j.model.chat.StreamingChatModel;
 import dev.langchain4j.model.openai.OpenAiStreamingChatModel;
+import jakarta.annotation.Resource;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
+
+import java.util.List;
 
 /**
  * @author xu
@@ -18,6 +22,9 @@ import org.springframework.context.annotation.Scope;
 @ConfigurationProperties(prefix = "langchain4j.open-ai.reasoning-streaming-chat-model")
 @Data
 public class ReasoningStreamingChatModelConfig {
+
+    @Resource
+    private AiModelMonitorListener aiModelMonitorListener;
 
     private String baseUrl;
 
@@ -33,6 +40,9 @@ public class ReasoningStreamingChatModelConfig {
 
     private Boolean logResponses = false;
 
+    /**
+     * 推理流式模型（用于 Vue 项目生成，带工具调用）
+     */
     @Bean
     @Scope("prototype")
     public StreamingChatModel reasoningStreamingChatModelPrototype() {
@@ -44,6 +54,7 @@ public class ReasoningStreamingChatModelConfig {
                 .temperature(temperature)
                 .logRequests(logRequests)
                 .logResponses(logResponses)
+                .listeners(List.of(aiModelMonitorListener))
                 .build();
     }
 }
