@@ -2,10 +2,10 @@ package com.xu.xuaicodeuser.service;
 
 import com.mybatisflex.core.query.QueryWrapper;
 import com.mybatisflex.core.service.IService;
-import com.xu.xuaicodeuser.model.dto.user.UserQueryRequest;
-import com.xu.xuaicodeuser.model.entity.User;
-import com.xu.xuaicodeuser.model.vo.LoginUserVO;
-import com.xu.xuaicodeuser.model.vo.UserVO;
+import com.xu.xuaicodemother.model.dto.user.UserQueryRequest;
+import com.xu.xuaicodemother.model.entity.User;
+import com.xu.xuaicodemother.model.vo.LoginUserVO;
+import com.xu.xuaicodemother.model.vo.UserVO;
 import jakarta.servlet.http.HttpServletRequest;
 
 import java.util.List;

@@ -1,10 +1,10 @@
 package com.xu.xuaicodeuser.aop;
 
-import com.xu.xuaicodeuser.annotation.AuthCheck;
-import com.xu.xuaicodeuser.exception.BusinessException;
-import com.xu.xuaicodeuser.exception.ErrorCode;
-import com.xu.xuaicodeuser.model.entity.User;
-import com.xu.xuaicodeuser.model.enums.UserRoleEnum;
+import com.xu.xuaicodemother.annotation.AuthCheck;
+import com.xu.xuaicodemother.exception.BusinessException;
+import com.xu.xuaicodemother.exception.ErrorCode;
+import com.xu.xuaicodemother.model.entity.User;
+import com.xu.xuaicodemother.model.enums.UserRoleEnum;
 import com.xu.xuaicodeuser.service.UserService;
 import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpServletRequest;

@@ -1,7 +1,7 @@
 package com.xu.xuaicodeuser.mapper;
 
 import com.mybatisflex.core.BaseMapper;
-import com.xu.xuaicodeuser.model.entity.User;
+import com.xu.xuaicodemother.model.entity.User;
 
 /**
  * 用户 映射层。

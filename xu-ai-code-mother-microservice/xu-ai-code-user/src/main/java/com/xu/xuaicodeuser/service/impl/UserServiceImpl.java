@@ -5,14 +5,14 @@ import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.StrUtil;
 import com.mybatisflex.core.query.QueryWrapper;
 import com.mybatisflex.spring.service.impl.ServiceImpl;
-import com.xu.xuaicodeuser.exception.BusinessException;
-import com.xu.xuaicodeuser.exception.ErrorCode;
-import com.xu.xuaicodeuser.model.dto.user.UserQueryRequest;
-import com.xu.xuaicodeuser.model.entity.User;
+import com.xu.xuaicodemother.exception.BusinessException;
+import com.xu.xuaicodemother.exception.ErrorCode;
+import com.xu.xuaicodemother.model.dto.user.UserQueryRequest;
+import com.xu.xuaicodemother.model.entity.User;
 import com.xu.xuaicodeuser.mapper.UserMapper;
-import com.xu.xuaicodeuser.model.enums.UserRoleEnum;
-import com.xu.xuaicodeuser.model.vo.LoginUserVO;
-import com.xu.xuaicodeuser.model.vo.UserVO;
+import com.xu.xuaicodemother.model.enums.UserRoleEnum;
+import com.xu.xuaicodemother.model.vo.LoginUserVO;
+import com.xu.xuaicodemother.model.vo.UserVO;
 import com.xu.xuaicodeuser.service.UserService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Service;
@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static com.xu.xuaicodeuser.constant.UserConstant.USER_LOGIN_STATE;
+import static com.xu.xuaicodemother.constant.UserConstant.USER_LOGIN_STATE;
 
 /**
  * 用户 服务层实现。

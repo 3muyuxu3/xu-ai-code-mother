@@ -11,7 +11,7 @@ import org.springframework.context.annotation.ComponentScan;
  * @CreateTime: 2025-09-05
  */
 @SpringBootApplication
-@MapperScan("com.xu.xuaicodeuser.mapper")
+@MapperScan("com.xu.xuaicodemother.mapper")
 @ComponentScan("com.xu")
 public class XuAiCodeUserApplication {
     public static void main(String[] args) {
