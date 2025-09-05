@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: xu-ai-code-screenshot
+server:
+  port: 8127
+  servlet:
+    context-path: /api
+
