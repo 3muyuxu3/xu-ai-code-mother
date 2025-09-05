@@ -1,16 +1,16 @@
 package com.ai.aicodemother.innerservice;
 
-import com.xu.xuaicodemother.exception.BusinessException;
-import com.xu.xuaicodemother.exception.ErrorCode;
-import com.xu.xuaicodemother.model.entity.User;
-import com.xu.xuaicodemother.model.vo.UserVO;
+import com.xu.xuaicodeuser.exception.BusinessException;
+import com.xu.xuaicodeuser.exception.ErrorCode;
+import com.xu.xuaicodeuser.model.entity.User;
+import com.xu.xuaicodeuser.model.vo.UserVO;
 import jakarta.servlet.http.HttpServletRequest;
 
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
 
-import static com.xu.xuaicodemother.constant.UserConstant.USER_LOGIN_STATE;
+import static com.xu.xuaicodeuser.constant.UserConstant.USER_LOGIN_STATE;
 
 /**
  * @author xu
