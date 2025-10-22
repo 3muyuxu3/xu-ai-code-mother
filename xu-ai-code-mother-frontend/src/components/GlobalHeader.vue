@@ -84,8 +84,8 @@ const originItems = [
   },
   {
     key: 'others',
-    label: h('a', { href: 'https://gitee.com/czxspaces', target: '_blank' }, '编程导航'),
-    title: '个人介绍',
+    label: h('a', { href: 'https://github.com/Gosling-bit/Gosling-bit', target: '_blank' }, '个人主页'),
+    title: '个人主页',
   },
 ]
 

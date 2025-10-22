@@ -3,12 +3,12 @@
     <div class="footer-content">
       <p class="copyright">
         <a
-          href="https://gitee.com/czxspaces"
+          href="https://github.com/Gosling-bit/Gosling-bit"
           target="_blank"
           rel="noopener noreferrer"
           class="author-link"
         >
-          AI 零代码生成平台 by 程序员栩
+          AI 零代码生成平台 by程序员栩
         </a>
       </p>
     </div>
