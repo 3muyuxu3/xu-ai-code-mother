@@ -6,6 +6,7 @@ import com.qcloud.cos.model.PutObjectResult;
 import com.xu.xuaicodemother.config.CosClientConfig;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.stereotype.Component;
 
 import java.io.File;
@@ -17,6 +18,7 @@ import java.io.File;
  * 腾讯云COS管理类
  */
 @Component
+@ConditionalOnBean(COSClient.class)
 @Slf4j
 public class CosManager {
 
